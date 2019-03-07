@@ -124,15 +124,13 @@ public class VentaDAO {
             
             pstmt = con.prepareStatement("UPDATE venta "
                     + " SET "
-                    + " identificacion=?"
-                    + " , nombre_1=?"
-                    + " , nombre_2=?"
-                    + " where id_persona=?");
-                        
-         /*   pstmt.setString(1, p.getIdentificacion());
-            pstmt.setString(2, p.getNombre1());
-            pstmt.setString(3, p.getNombre2());
-            pstmt.setInt(4, p.getId());*/
+                    + " cliente_cli_identificacion=?"
+                    + " , vehiculo_idcarro=?"
+                    + " , ven_fecha=?"
+                    + " , ven_precio=?"
+                    + " , usuario_asesor=?" 
+                    + " , ven_fecha_registra=?"
+                    + " where idventa=?");
             
             pstmt.executeUpdate();
             
