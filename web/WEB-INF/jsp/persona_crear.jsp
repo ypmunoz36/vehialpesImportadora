@@ -114,19 +114,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<h3>:: Registro ::</h3>
 				
 				<div class="login-form">
-					<form action="personaRegistrar.htm" method="post">
+					<form action="ventaRegistrar.htm" method="post">
                                             <input type="text" name="identificacion" placeholder="Identificación" required>
-                                            <input type="text" name="nombre1" placeholder="Nombre 1" required>
-                                            <input type="text" name="nombre2" placeholder="Nombre 2" required>
-                                            <input type="text" name="apellido1" placeholder="Apellido 1" required>
-                                            <input type="text" name="apellido2" placeholder="Apellido 2" required>
-                                            <input type="text" name="genero" placeholder="Genero" required="">
-                                            <input type="text" name="tipop" placeholder="Tipo Persona" required="">
-                                            <input type="date" name="fecha" placeholder="Fecha Nacimiento" required="">
-                                            <input type="text" name="telefono" placeholder="Telefono" required="">
-                                            <input type="email" name="email" placeholder="E-mail" required="">
-
-                                            <input type="submit" value="REGISTER">
+                                            <input type="text" name="vin" placeholder="Identificador del vehiculo" required>
+                                            <input type="date" name="fecha" placeholder="Fecha" required>
+                                            <input type="text" name="precio" placeholder="precio" required>
+                                            <input type="text" name="asesor" placeholder="asesor" required>
+                                            
+                                            <input type="submit" value="REGISTRAR">
 					</form>
 				</div>
 				<p>${mensaje}</p>

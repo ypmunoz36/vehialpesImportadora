@@ -23,7 +23,7 @@ public class MySqlDataSource {
         ds = new MysqlDataSource();
         ds.setServerName("localhost");
         ds.setPortNumber(3306);
-        ds.setDatabaseName("prueba1");
+        ds.setDatabaseName("vehialpes");
         ds.setUser("root");
         ds.setPassword("root");        
     }

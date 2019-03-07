@@ -18,7 +18,7 @@ public class Test_MySqlDataSource {
         = new com.mysql.jdbc.jdbc2.optional.MysqlDataSource();
       ds.setServerName("localhost");
       ds.setPortNumber(3306);
-      ds.setDatabaseName("test");
+      ds.setDatabaseName("vehialpes");
       ds.setUser("root");
       ds.setPassword("root");
 

@@ -73,6 +73,6 @@ public class VentaDTO {
     public String toString() {
         return "VentaDTO{" + "identificacionCliente=" + identificacionCliente + ", vinAuto=" + vinAuto + ", fechaVenta=" + fechaVenta + ", precioVenta=" + precioVenta + ", asesor=" + asesor + '}';
     }
-    
+
     
 }

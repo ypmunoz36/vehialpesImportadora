@@ -32,11 +32,8 @@ public class VentaDAO {
             
             Logger.getLogger(VentaDAO.class.getName()).log(Level.INFO, "Ejecutando crear...");
             
-            pstmt = con.prepareStatement("INSERT INTO venta" +
-                    "(cliente_cli_identificacion," +
-                    "vehiculo_idcarro," +
-                    "ven_fecha,ven_precio,"
-                    + "usuario_asesor) VALUES(?,?,?,?,?)");
+            pstmt = con.prepareStatement("INSERT INTO venta(cliente_cli_identificacion,vehiculo_idcarro,ven_fecha,ven_precio,usuario_asesor) "
+                    + "VALUES(?,?,?,?,?)");
             
             pstmt.setInt(1,p.getIdentificacionCliente());
             pstmt.setString(2, p.getVinAuto());

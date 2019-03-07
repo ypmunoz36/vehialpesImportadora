@@ -11,7 +11,9 @@ package controllers;
  */
 
 import co.edu.uniminuto.pa.DAOs.PersonaDAO;
+import co.edu.uniminuto.pa.DAOs.VentaDAO;
 import co.edu.uniminuto.pa.DTOs.Persona;
+import co.edu.uniminuto.pa.DTOs.VentaDTO;
 import co.edu.uniminuto.pa.bds.MySqlDataSource;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,42 +46,32 @@ public class PersonaControllers {
         return "persona_crear";
     }    
     
-@RequestMapping(method = RequestMethod.POST, value = "personaRegistrar.htm")
+@RequestMapping(method = RequestMethod.POST, value = "ventaRegistrar.htm")
     public String processSubmit1(HttpServletRequest req, SessionStatus status,ModelMap model) 
     {
 
-        PersonaDAO pDao = new PersonaDAO();
+        VentaDAO vDao = new VentaDAO();
             
         Logger.getLogger(PersonaControllers.class.getName()).log(Level.INFO, "Ejecutando processSubmit1...");
 
-        int id = pDao.obtenerId(MySqlDataSource.getConexionBD());
-        String ident = req.getParameter("identificacion");
-        String nombre1 = req.getParameter("nombre1");
-        String nombre2 = req.getParameter("nombre2");
-        String apellido1 = req.getParameter("apellido1");
-        String apellido2 = req.getParameter("apellido2");
-        String genero = req.getParameter("genero");
-        String tipoP = req.getParameter("tipop");
-        String fNacimiento = req.getParameter("fecha");
-        String telef = req.getParameter("telefono");
-        String email = req.getParameter("email");
+       // int id = vDao.obtenerId(MySqlDataSource.getConexionBD());
+        String identificacion = req.getParameter("identificacion");
+        String vin = req.getParameter("vin");
+        String fecha = req.getParameter("fecha");
+        String precio = req.getParameter("precio");
+        String asesor = req.getParameter("asesor");
         
-        Persona p = new Persona();
-        p.setId(id);
-        p.setIdentificacion(ident);
-        p.setNombre1(nombre1);
-        p.setNombre2(nombre2);
-        p.setApellido1(apellido1);
-        p.setApellido2(apellido2);
-        p.setGenero(genero);
-        p.setTipoP(tipoP);
-        p.setfNacimiento(fNacimiento);
-        p.setTelef(telef);
-        p.setEmail(email);                                    
-            
-        boolean insert = pDao.crearPersona(p, MySqlDataSource.getConexionBD());
+        VentaDTO v = new VentaDTO();
+        v.setIdentificacionCliente( Integer.parseInt( identificacion));
+        v.setVinAuto(vin);
+        v.setFechaVenta(fecha);
+        v.setPrecioVenta( Integer.parseInt( precio) );
+        v.setAsesor(asesor);
+        
+        System.out.println("connn---%: " +   MySqlDataSource.getConexionBD());
+        boolean insert = vDao.crearVenta(v, MySqlDataSource.getConexionBD());
 
-        Logger.getLogger(PersonaControllers.class.getName()).log(Level.SEVERE, null, "Registrar + " + ident + "-" + insert);
+     //   Logger.getLogger(PersonaControllers.class.getName()).log(Level.SEVERE, null, "Registrar + " + ident + "-" + insert);
         
         if (insert)
             model.put("mensaje", "El registro fue creado satisfactoriamente!!!");
