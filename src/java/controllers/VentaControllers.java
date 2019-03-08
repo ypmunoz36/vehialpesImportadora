@@ -28,7 +28,7 @@ import org.springframework.web.bind.support.SessionStatus;
  
 @Controller
 @RequestMapping("/")
-public class PersonaControllers {
+public class VentaControllers {
  /*
     @RequestMapping(method = RequestMethod.GET)
     public String helloWorld(ModelMap modelMap) {
@@ -37,13 +37,13 @@ public class PersonaControllers {
         return "persona_crear";
     }
     */
-@RequestMapping(method = RequestMethod.GET, value = "personaCrear.htm")
+@RequestMapping(method = RequestMethod.GET, value = "ventaCrear.htm")
     public String processSubmit(HttpServletRequest req, SessionStatus status,ModelMap model) 
     {
 
         System.out.println("personaCrear");
         model.put("mensajePersona", "Pase por el controller de Persona:::"+req.getParameter("nombre"));
-        return "persona_crear";
+        return "venta_crear"; // nombre del jsp gui
     }    
     
 @RequestMapping(method = RequestMethod.POST, value = "ventaRegistrar.htm")
@@ -52,7 +52,7 @@ public class PersonaControllers {
 
         VentaDAO vDao = new VentaDAO();
             
-        Logger.getLogger(PersonaControllers.class.getName()).log(Level.INFO, "Ejecutando processSubmit1...");
+        Logger.getLogger(VentaControllers.class.getName()).log(Level.INFO, "Ejecutando processSubmit1...");
 
        // int id = vDao.obtenerId(MySqlDataSource.getConexionBD());
         String identificacion = req.getParameter("identificacion");
@@ -71,24 +71,24 @@ public class PersonaControllers {
         System.out.println("connn---%: " +   MySqlDataSource.getConexionBD());
         boolean insert = vDao.crearVenta(v, MySqlDataSource.getConexionBD());
 
-     //   Logger.getLogger(PersonaControllers.class.getName()).log(Level.SEVERE, null, "Registrar + " + ident + "-" + insert);
+     //   Logger.getLogger(VentaControllers.class.getName()).log(Level.SEVERE, null, "Registrar + " + ident + "-" + insert);
         
         if (insert)
             model.put("mensaje", "El registro fue creado satisfactoriamente!!!");
         else
             model.put("mensaje", "El registro NO fue creado, consulte con el administrador...");
         
-        return "persona_crear";
+        return "venta_crear";
     }     
     
-@RequestMapping(method = RequestMethod.GET, value = "personaConsultar.htm")
+@RequestMapping(method = RequestMethod.GET, value = "ventaConsultar.htm")
     public String processSubmit2(HttpServletRequest req, SessionStatus status,ModelMap model) 
     {      
-        Logger.getLogger(PersonaControllers.class.getName()).log(Level.INFO, "Ejecutando processSubmit2...");
-        return "persona_consultar";
+        Logger.getLogger(VentaControllers.class.getName()).log(Level.INFO, "Ejecutando processSubmit2...");
+        return "venta_consultar";
     } 
     
-@RequestMapping(method = RequestMethod.POST, value = "personaConsultarForm.htm")
+@RequestMapping(method = RequestMethod.POST, value = "ventaConsultarForm.htm")
     public String processSubmit3(HttpServletRequest req, SessionStatus status,ModelMap model) 
     {
 
@@ -107,7 +107,7 @@ public class PersonaControllers {
             
         List<Persona> datos = pDao.consultarPersona(p, MySqlDataSource.getConexionBD());
 
-        Logger.getLogger(PersonaControllers.class.getName()).log(Level.SEVERE, null, "Consultar + " + ident + "-" + datos.size());
+        Logger.getLogger(VentaControllers.class.getName()).log(Level.SEVERE, null, "Consultar + " + ident + "-" + datos.size());
         
         model.put("listaPersonas", datos);
         if (datos.size() > 0)
@@ -115,17 +115,17 @@ public class PersonaControllers {
         else
             model.put("mensaje", "La consulta NO tiene resultados...");
         
-        return "persona_consultar";
+        return "venta_consultar";
     }     
     
-@RequestMapping(method = RequestMethod.GET, value = "personaEditar.htm")
+@RequestMapping(method = RequestMethod.GET, value = "ventaEditar.htm")
     public String processSubmit4(HttpServletRequest req, SessionStatus status,ModelMap model) 
     {      
-        Logger.getLogger(PersonaControllers.class.getName()).log(Level.INFO, "Ejecutando processSubmit4...");
-        return "persona_editar";
+        Logger.getLogger(VentaControllers.class.getName()).log(Level.INFO, "Ejecutando processSubmit4...");
+        return "venta_editar";
     } 
     
-@RequestMapping(method = RequestMethod.POST, value = "personaEditarForm1.htm")
+@RequestMapping(method = RequestMethod.POST, value = "ventaEditarForm1.htm")
     public String processSubmit5(HttpServletRequest req, SessionStatus status,ModelMap model) 
     {
 
@@ -144,16 +144,16 @@ public class PersonaControllers {
             
         List<Persona> datos = pDao.consultarPersona(p, MySqlDataSource.getConexionBD());
 
-        Logger.getLogger(PersonaControllers.class.getName()).log(Level.SEVERE, null, "Consultar + " + ident + "-" + datos.size());
+        Logger.getLogger(VentaControllers.class.getName()).log(Level.SEVERE, null, "Consultar + " + ident + "-" + datos.size());
         
         model.put("listaPersonas", datos);
         
         
-        return "persona_editar";
+        return "venta_editar";
         
     }    
     
-@RequestMapping(method = RequestMethod.POST, value = "personaEditarForm2.htm")
+@RequestMapping(method = RequestMethod.POST, value = "ventaEditarForm2.htm")
     public String processSubmit6(HttpServletRequest req, SessionStatus status,ModelMap model) 
     {
 
@@ -195,7 +195,7 @@ public class PersonaControllers {
         else
             model.put("mensaje", "NO se guardaron los cambios...");
         
-        return "persona_editar";
+        return "venta_editar";
         
     }    
 }

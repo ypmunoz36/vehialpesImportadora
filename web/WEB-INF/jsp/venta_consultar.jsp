@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Pooled Admin Panel Category Flat Bootstrap Responsive Web Template | Input :: w3layouts</title>
+<title>VehiAlpes</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Pooled Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -37,7 +37,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               <!--header start here-->
 				<div class="header-main">
 					<div class="logo-w3-agile">
-								<h1><a href="index.html">Pooled</a></h1>
+								<h1><a href="index.html">VehiAlpes</a></h1>
 							</div>
 					<div class="w3layouts-left">
 							
@@ -305,7 +305,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--inner block end here-->
 <!--copy rights start here-->
 <div class="copyrights">
-	 <p>© 2016 Pooled . All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+	 <p>© 2016 VehiAlpes . All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
 </div>	
 <!--COPY rights end here-->
 </div>
@@ -321,9 +321,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<ul id="menu" >
 										<li><a href="index.html"><i class="fa fa-tachometer"></i> <span>Dashboard</span><div class="clearfix"></div></a></li>
 										
-										 <li id="menu-academico" ><a href="personaCrear.htm"><i class="fa fa-shopping-cart nav_icon"></i><span>Registrar Venta</span><div class="clearfix"></div></a></li>
-                                                                                <li id="menu-academico" ><a href="personaConsultar.htm"><i class="fa fa-shopping-cart nav_icon"></i><span>Consultar venta</span><div class="clearfix"></div></a></li>
-										<li id="menu-academico" ><a href="personaEditar.htm"><i class="fa fa-shopping-cart nav_icon"></i><span>Editar venta</span><div class="clearfix"></div></a></li>
+										 <li id="menu-academico" ><a href="ventaCrear.htm"><i class="fa fa-shopping-cart nav_icon"></i><span>Registrar Venta</span><div class="clearfix"></div></a></li>
+                                                                                <li id="menu-academico" ><a href="ventaConsultar.htm"><i class="fa fa-shopping-cart nav_icon"></i><span>Consultar venta</span><div class="clearfix"></div></a></li>
+										<li id="menu-academico" ><a href="ventaEditar.htm"><i class="fa fa-shopping-cart nav_icon"></i><span>Editar venta</span><div class="clearfix"></div></a></li>
 
                                                                                  
                                                                                  <li id="menu-academico" ><a href="charts.html"><i class="fa fa-bar-chart"></i><span>Charts</span><div class="clearfix"></div></a></li>
