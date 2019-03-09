@@ -621,7 +621,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                                             
 										<li><a href="index.html"><i class="fa fa-tachometer"></i> <span>Dashboard</span><div class="clearfix"></div></a></li>
 										<li id="menu-academico" ><a href="ventaCrear.htm"><i class="fa fa-shopping-cart nav_icon"></i><span>Registrar venta</span><div class="clearfix"></div></a></li>
-										<li id="menu-academico" ><a href="ventaConsultar.htm"><i class="fa fa-shopping-cart nav_icon"></i><span>Consultar venta</span><div class="clearfix"></div></a></li>
+										<li id="menu-academico" ><a href="ventaConsultarForm.htm"><i class="fa fa-shopping-cart nav_icon"></i><span>Consultar venta</span><div class="clearfix"></div></a></li>
 										<li id="menu-academico" ><a href="ventaEditar.htm"><i class="fa fa-shopping-cart nav_icon"></i><span>Editar venta</span><div class="clearfix"></div></a></li>
 
                                                                                 

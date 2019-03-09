@@ -1,11 +1,15 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE HTML>
-<html>
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+	<!DOCTYPE html>
+	<!--A Design by W3layouts
+	Author: W3layout
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+	-->
+	<!DOCTYPE html>
+<html lang="en">
+	
 <head>
 <title>VehiAlpes</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -214,64 +218,50 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</ul>
 							</div>
 							
-				     <div class="clearfix"> </div>	
-				</div>
+	<div class="clearfix"> </div>	
+	</div>
 <!--heder end here-->
 	<ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Home</a><i class="fa fa-angle-right"></i>Forms <i class="fa fa-angle-right"></i> Input</li>
             </ol>
 		<!--grid-->
- 	<div class="grid-form">
+ <div class="grid-form">
  		
 <!----->
 <div class="grid-form1">
-<h3 id="forms-horizontal">Registro de venta</h3>
+<h3 id="forms-horizontal">Ventas</h3>
+<p>${mensaje}</p>
 
-<form action="ventaRegistrar.htm" method="post" class="form-horizontal">
-
-  <div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label hor-form">Identificación del cliente</label>
-    <div class="col-sm-10">
-       <input type="text" class="form-control"  name="identificacion" placeholder="Identificación" required>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label hor-form">VIN del vehiculo</label>
-    <div class="col-sm-10">
-     <input type="text" class="form-control"  name="vin" placeholder="Identificador del vehiculo" required>
-    </div>
-  </div>
-     <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Fecha</label>
-    <div class="col-sm-10">
-     <input type="date" class="form-control"  name="fecha" placeholder="Fecha" required>
-    </div>
-  </div>
-     <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Precio</label>
-    <div class="col-sm-10">
-     <input type="text" class="form-control"  name="precio" placeholder="precio" required>
-    </div>
-  </div>
-    
-     <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Asesor</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control"  name="asesor" placeholder="asesor" required>
-    </div>
-  </div>
- 
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-     <input class="btn btn-default" type="submit" value="REGISTRAR">
-    </div>
-  </div>
-</form> 
-
+ <table id="tablaResultado" class="table table-striped table-hover table-bordered" >
+                                <thead>       
+                                    <tr>
+                                         <th>Identificador de venta</th>
+                                       <th>Identificación del cliente</th>
+                                       <th>VIN del vehiculo</th>
+                                       <th>Fecha venta</th>
+                                       <th>Precio</th>
+                                       <th>Asesor</th>
+                                    </tr>
+                                </thead>                                        
+                                <tbody>
+                                    
+                                <!--  <c:forEach var="p" items="${listaVentas}">                                           
+                                    <tr>
+                                        <td>${p.getIdentificacionCliente()}</td>
+                                        <td>${p.getIdentificacionCliente()}</td>
+                                        <td>${p.setVinAuto()}</td>
+                                         <td>${p.setFechaVenta()}</td>
+                                          <td>${p.setPrecioVenta()}</td>
+                                           <td>${p.setAsesor()}</td>
                                            
-                                           
-                                            
-                                            
+                                    </tr>
+                                </c:forEach>-->
+                                
+                                   
+                                </tbody>
+                            </table>
+
+
 					
 </div>
 <!---->
@@ -322,7 +312,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<li><a href="index.html"><i class="fa fa-tachometer"></i> <span>Dashboard</span><div class="clearfix"></div></a></li>
 										
 										 <li id="menu-academico" ><a href="ventaCrear.htm"><i class="fa fa-shopping-cart nav_icon"></i><span>Registrar Venta</span><div class="clearfix"></div></a></li>
-                                                                                <li id="menu-academico" ><a href="ventaConsultar.htm"><i class="fa fa-shopping-cart nav_icon"></i><span>Consultar venta</span><div class="clearfix"></div></a></li>
+                                                                                <li id="menu-academico" ><a href="ventaConsultarForm.htm"><i class="fa fa-shopping-cart nav_icon"></i><span>Consultar venta</span><div class="clearfix"></div></a></li>
 										<li id="menu-academico" ><a href="ventaEditar.htm"><i class="fa fa-shopping-cart nav_icon"></i><span>Editar venta</span><div class="clearfix"></div></a></li>
 
                                                                                  

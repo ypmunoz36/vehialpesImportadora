@@ -64,8 +64,8 @@ public class VentaDAO {
         try {
             Statement s = con.createStatement();
             ResultSet rs = s.executeQuery ("select idventa,  cliente_cli_identificacion,"
-                    + "    vehiculo_idcarro,ven_fecha, ven_precio,usuario_asesor,"
-                    + "ven_fecha_registra FROM venta");
+                    + "    vehiculo_idcarro,ven_fecha, ven_precio,usuario_asesor"
+                    + " FROM venta");
             
             while (rs.next())
             { 

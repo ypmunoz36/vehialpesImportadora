@@ -88,30 +88,30 @@ public class VentaControllers {
         return "venta_consultar";
     } 
     
-@RequestMapping(method = RequestMethod.POST, value = "ventaConsultarForm.htm")
+@RequestMapping(method = RequestMethod.GET, value = "ventaConsultarForm.htm")
     public String processSubmit3(HttpServletRequest req, SessionStatus status,ModelMap model) 
     {
 
-        PersonaDAO pDao = new PersonaDAO();
+        VentaDAO pDao = new VentaDAO();
             
         Logger.getLogger(PersonaDAO.class.getName()).log(Level.INFO, "Ejecutando processSubmit3...");
 
-        int id = pDao.obtenerId(MySqlDataSource.getConexionBD());
-        String ident = req.getParameter("identificacion");
-        String nombre1 = req.getParameter("nombre1");
+      //  int id = pDao.obtenerId(MySqlDataSource.getConexionBD());
+       // String ident = req.getParameter("identificacion");
+      //  String nombre1 = req.getParameter("nombre1");
         
-        Persona p = new Persona();
-        p.setId(id);
-        p.setIdentificacion(ident);
-        p.setNombre1(nombre1);
-            
-        List<Persona> datos = pDao.consultarPersona(p, MySqlDataSource.getConexionBD());
+        VentaDTO v = new VentaDTO();
+        
+        System.out.println("estoy consultando ");    
+        List<VentaDTO> datos = pDao.consultarVenta(v, MySqlDataSource.getConexionBD());
 
-        Logger.getLogger(VentaControllers.class.getName()).log(Level.SEVERE, null, "Consultar + " + ident + "-" + datos.size());
         
-        model.put("listaPersonas", datos);
+      //  Logger.getLogger(VentaControllers.class.getName()).log(Level.SEVERE, null, "Consultar + " + ident + "-" + datos.size());
+        
+        model.put("listaVentas", datos);
+        System.out.println("--->>>>>"+datos.size());
         if (datos.size() > 0)
-            model.put("mensaje", "La consulta se realizo satisfactoriamente!!!" + datos.size());
+            model.put("mensaje", "La consulta se realizo satisfactoriamente!!!" + datos.size() );
         else
             model.put("mensaje", "La consulta NO tiene resultados...");
         
