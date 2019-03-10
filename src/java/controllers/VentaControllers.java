@@ -92,18 +92,18 @@ public class VentaControllers {
     public String processSubmit3(HttpServletRequest req, SessionStatus status,ModelMap model) 
     {
 
-        VentaDAO pDao = new VentaDAO();
+        VentaDAO vDao = new VentaDAO();
             
         Logger.getLogger(PersonaDAO.class.getName()).log(Level.INFO, "Ejecutando processSubmit3...");
 
-      //  int id = pDao.obtenerId(MySqlDataSource.getConexionBD());
+      //  int id = vDao.obtenerId(MySqlDataSource.getConexionBD());
        // String ident = req.getParameter("identificacion");
       //  String nombre1 = req.getParameter("nombre1");
         
         VentaDTO v = new VentaDTO();
         
         System.out.println("estoy consultando ");    
-        List<VentaDTO> datos = pDao.consultarVenta(v, MySqlDataSource.getConexionBD());
+        List<VentaDTO> datos = vDao.consultarVenta(v, MySqlDataSource.getConexionBD());
 
         
       //  Logger.getLogger(VentaControllers.class.getName()).log(Level.SEVERE, null, "Consultar + " + ident + "-" + datos.size());

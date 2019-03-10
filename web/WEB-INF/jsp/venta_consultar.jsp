@@ -1,4 +1,4 @@
-	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 	<!DOCTYPE html>
 	<!--A Design by W3layouts
@@ -32,6 +32,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- lined-icons -->
 <link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
 <!-- //lined-icons -->
+
+
 </head> 
 <body>
    <div class="page-container">
@@ -230,7 +232,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!----->
 <div class="grid-form1">
 <h3 id="forms-horizontal">Ventas</h3>
-<p>${mensaje}</p>
+
 
  <table id="tablaResultado" class="table table-striped table-hover table-bordered" >
                                 <thead>       
@@ -245,17 +247,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </thead>                                        
                                 <tbody>
                                     
-                                <!--  <c:forEach var="p" items="${listaVentas}">                                           
+                                 <c:forEach var="ven" items="${listaVentas}">                                           
                                     <tr>
-                                        <td>${p.getIdentificacionCliente()}</td>
-                                        <td>${p.getIdentificacionCliente()}</td>
-                                        <td>${p.setVinAuto()}</td>
-                                         <td>${p.setFechaVenta()}</td>
-                                          <td>${p.setPrecioVenta()}</td>
-                                           <td>${p.setAsesor()}</td>
+                                        <td>${ven.getIdventa()}</td>
+                                        <td>${ven.getIdentificacionCliente()}</td>
+                                        <td>${ven.getVinAuto()}</td>
+                                         <td>${ven.getFechaVenta()}</td>
+                                          <td>${ven.getPrecioVenta()}</td>
+                                           <td>${ven.getAsesor()}</td>
                                            
                                     </tr>
-                                </c:forEach>-->
+                                </c:forEach>
                                 
                                    
                                 </tbody>
