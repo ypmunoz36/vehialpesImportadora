@@ -1,3 +1,4 @@
+
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -37,7 +38,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               <!--header start here-->
 				<div class="header-main">
 					<div class="logo-w3-agile">
-								<h1><a href="helloWorld.html">VehiAlpes</a></h1>
+								<h1><a href="helloWorld.htm">VehiAlpes</a></h1>
 							</div>
 					<div class="w3layouts-left">
 							
@@ -225,62 +226,89 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  		
 <!----->
 <div class="grid-form1">
-        
-<h3 id="forms-horizontal">Consultar</h3>
-<form action="#" method="post" class="form-horizontal">
-<div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label hor-form">Identificador de venta</label>
-    <div class="col-sm-10">
-       <input type="text" class="form-control"  name="identificacionB" placeholder="Identificador de venta" required>
-    </div>
-  </div>
-      <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-     <input class="btn btn-default" type="submit" value="BUSCAR">
-    </div>
-  </div>
-</form>
-<h3 id="forms-horizontal">Edición de venta</h3>
-
-<form action="ventaRegistrar.htm" method="post" class="form-horizontal">
+<h3 id="forms-horizontal">Registro de cliente</h3>
+<p>${mensaje}</p>
+<form action="clienteRegistrar.htm" method="post" class="form-horizontal">
 
   <div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label hor-form">Identificación del cliente</label>
+    <label for="inputEmail3" class="col-sm-2 control-label hor-form">Identificación </label>
     <div class="col-sm-10">
        <input type="text" class="form-control"  name="identificacion" placeholder="Identificación" required>
     </div>
   </div>
   <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label hor-form">VIN del vehiculo</label>
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Nombre del cliente</label>
     <div class="col-sm-10">
-     <input type="text" class="form-control"  name="vin" placeholder="Identificador del vehiculo" required>
+     <input type="text" class="form-control"  name="nombre" placeholder="Nombre" required>
     </div>
   </div>
      <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Fecha</label>
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Apellido</label>
     <div class="col-sm-10">
-     <input type="date" class="form-control"  name="fecha" placeholder="Fecha" required>
+     <input type="text" class="form-control"  name="apellidos" placeholder="Apellido" required>
     </div>
   </div>
      <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Precio</label>
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Dirección</label>
     <div class="col-sm-10">
-     <input type="text" class="form-control"  name="precio" placeholder="precio" required>
+     <input type="text" class="form-control"  name="direccion" placeholder="Dirección" required>
     </div>
   </div>
     
      <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Asesor</label>
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Ciudad</label>
     <div class="col-sm-10">
-    <input type="text" class="form-control"  name="asesor" placeholder="asesor" required>
+    <input type="text" class="form-control"  name="ciudad" placeholder="Ciudad" required>
     </div>
   </div>
  
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Teléfono</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control"  name="telefono" placeholder="0" required>
+    </div>
+  </div>
+    
+    <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Celular</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control"  name="celular" placeholder="0" required>
+    </div>
+  </div>
+    
+    <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Fecha de nacimiento</label>
+    <div class="col-sm-10">
+    <input type="date" class="form-control"  name="fechaNacimiento"  required>
+    </div>
+  </div>
+    
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Correo</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control"  name="correo" placeholder="correo" required>
+    </div>
+  </div>
+    
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Sexo</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control"  name="sexo" placeholder="sexo" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Descripción</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control"  name="descripcion" placeholder="El cliente se intereza en ..." required>
+    </div>
+  </div>  
+    
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
      <input class="btn btn-default" type="submit" value="REGISTRAR">
     </div>
   </div>
+    
 </form> 
 
                                            

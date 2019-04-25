@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/03/2019 12:45:31 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="vehialpes" name="utilHibernate.Pqrs" optimistic-lock="version" table="pqrs">
+    <id name="idpqrs" type="java.lang.Integer">
+      <column name="idpqrs"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="utilHibernate.Cliente" fetch="select" name="cliente">
+      <column name="cliente_cli_identificacion" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="utilHibernate.Usuario" fetch="select" name="usuario">
+      <column name="usuario_idusuario" not-null="true"/>
+    </many-to-one>
+    <property name="pqrTipo" type="java.lang.Integer">
+      <column name="pqr_tipo">
+        <comment>1. peticion 2. queja 3. reclamo 4 . solicitud</comment>
+      </column>
+    </property>
+    <property name="pqrTipoLlamada" type="java.lang.Integer">
+      <column name="pqr_tipo_llamada">
+        <comment>1. seguimiento preventa 2. pqrs 3. seguimiento postventa</comment>
+      </column>
+    </property>
+    <property name="pqrDescripcion" type="string">
+      <column length="145" name="pqr_descripcion"/>
+    </property>
+    <property name="pqrFecha" type="date">
+      <column length="10" name="pqr_fecha"/>
+    </property>
+    <property name="pqrHora" type="time">
+      <column length="8" name="pqr_hora"/>
+    </property>
+    <property name="pqrFechaRegistro" type="timestamp">
+      <column length="19" name="pqr_fecha_registro"/>
+    </property>
+  </class>
+</hibernate-mapping>

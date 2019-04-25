@@ -1,11 +1,12 @@
-<!--
-Author: W3layouts
+<!DOCTYPE html>
+<!--A Design by W3layouts
+Author: W3layout
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <title>VehiAlpes</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -226,12 +227,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!----->
 <div class="grid-form1">
         
-<h3 id="forms-horizontal">Consultar</h3>
-<form action="#" method="post" class="form-horizontal">
+<h3 id="forms-horizontal">Consultar vehículo</h3>
+<form action="vehiculoConsultarForm.htm" method="post" class="form-horizontal">
 <div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label hor-form">Identificador de venta</label>
+    <label for="inputEmail3" class="col-sm-2 control-label hor-form">Vehiculo</label>
     <div class="col-sm-10">
-       <input type="text" class="form-control"  name="identificacionB" placeholder="Identificador de venta" required>
+       <input type="text" class="form-control"  name="vin" placeholder="VIN" required>
     </div>
   </div>
       <div class="form-group">
@@ -240,45 +241,107 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
   </div>
 </form>
-<h3 id="forms-horizontal">Edición de venta</h3>
+<p>${mensaje}</p>
+<h3 id="forms-horizontal">Edición de vehículo</h3>
 
-<form action="ventaRegistrar.htm" method="post" class="form-horizontal">
-
+    <form action="vehiculoEditarForm.htm" method="post" class="form-horizontal">
   <div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label hor-form">Identificación del cliente</label>
+    <label for="inputEmail3" class="col-sm-2 control-label hor-form">VIN </label>
     <div class="col-sm-10">
-       <input type="text" class="form-control"  name="identificacion" placeholder="Identificación" required>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label hor-form">VIN del vehiculo</label>
-    <div class="col-sm-10">
-     <input type="text" class="form-control"  name="vin" placeholder="Identificador del vehiculo" required>
+       <input type="text" class="form-control"  name="vin" value="${vehiculoConsultado.getVin()}" required>
     </div>
   </div>
      <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Fecha</label>
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Nombre</label>
     <div class="col-sm-10">
-     <input type="date" class="form-control"  name="fecha" placeholder="Fecha" required>
+    <input type="text" class="form-control"  name="nombre"  value="${vehiculoConsultado.getNombre()}" required>
+    </div>
+  </div> 
+    
+  <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label hor-form">Costo</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control"  name="precioCosto"  value="${vehiculoConsultado.getPrecioCosto()}" required>
+    </div>
+  </div>  
+    
+     <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Precio venta</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control"  name="precioVenta"  value="${vehiculoConsultado.getPrecioVenta()}" required>
+    </div>
+  </div> 
+
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Matricula</label>
+    <div class="col-sm-10">
+     <input type="text" class="form-control"  name="matricula"  value="${vehiculoConsultado.getMatricula()}" required>
     </div>
   </div>
      <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Precio</label>
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Año de fabricación</label>
     <div class="col-sm-10">
-     <input type="text" class="form-control"  name="precio" placeholder="precio" required>
+     <input type="text" class="form-control"  name="anioFabricacion"  value="${vehiculoConsultado.getAnioFabricacion()}" required>
+    </div>
+  </div>
+     <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Cilindraje</label>
+    <div class="col-sm-10">
+     <input type="text" class="form-control"  name="cilindraje"  value="${vehiculoConsultado.getCilindraje()}" required>
     </div>
   </div>
     
      <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Asesor</label>
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Tipo de Combustible</label>
     <div class="col-sm-10">
-    <input type="text" class="form-control"  name="asesor" placeholder="asesor" required>
+    <input type="text" class="form-control"  name="tipoCombustible"  value="${vehiculoConsultado.getTipoCombustible()}" required>
     </div>
   </div>
  
   <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Modelo</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control"  name="modelo"  value="${vehiculoConsultado.getModelo()}" required>
+    </div>
+  </div>
+    
+    <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Color</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control"  name="color"  value="${vehiculoConsultado.getColor()}" required>
+    </div>
+  </div>
+    
+    <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Numero de sillas</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control"  name="numSillas"  value="${vehiculoConsultado.getNumSillas()}"  required>
+    </div>
+  </div>
+    
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Marca</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control"  name="idMarca"  value="${vehiculoConsultado.getIdMarca()}" required>
+    </div>
+  </div>
+    
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Tipo</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control"  name="idTipo"  value="${vehiculoConsultado.getIdTipo()}" required>
+    </div>
+  </div>
+    
+      <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Pais de fabricación</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control"  name="paisFab"  value="${vehiculoConsultado.getPaisFab()}" required>
+    </div> 
+ 
+  <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-     <input class="btn btn-default" type="submit" value="REGISTRAR">
+     <input class="btn btn-default" type="submit" value="ACTUALIZAR">
     </div>
   </div>
 </form> 

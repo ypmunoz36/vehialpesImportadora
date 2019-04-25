@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/03/2019 12:45:31 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="vehialpes" name="utilHibernate.Vehiculo" optimistic-lock="version" table="vehiculo">
+    <id name="vin" type="string">
+      <column length="17" name="vin"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="utilHibernate.MarcaVehiculo" fetch="select" name="marcaVehiculo">
+      <column name="id_marca" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="utilHibernate.TipoVehiculo" fetch="select" name="tipoVehiculo">
+      <column name="id_tipo" not-null="true">
+        <comment>automóvil (4x2) y SUVs (4x4)</comment>
+      </column>
+    </many-to-one>
+    <property name="matricula" type="string">
+      <column length="45" name="matricula"/>
+    </property>
+    <property name="anioFabricacion" type="java.lang.Integer">
+      <column name="anio_fabricacion"/>
+    </property>
+    <property name="cilindraje" type="java.lang.Integer">
+      <column name="cilindraje"/>
+    </property>
+    <property name="idTipoCombustible" type="java.lang.Integer">
+      <column name="id_tipo_combustible"/>
+    </property>
+    <property name="modelo" type="string">
+      <column length="45" name="modelo"/>
+    </property>
+    <property name="color" type="string">
+      <column length="45" name="color"/>
+    </property>
+    <property name="numeroSillas" type="java.lang.Integer">
+      <column name="numero_sillas"/>
+    </property>
+    <property name="fechaRegistro" type="timestamp">
+      <column length="19" name="fecha_registro"/>
+    </property>
+    <property name="paisFabricacion" type="string">
+      <column length="45" name="pais_fabricacion"/>
+    </property>
+    <property name="costo" type="java.lang.Integer">
+      <column name="costo"/>
+    </property>
+    <property name="precioVenta" type="java.lang.Integer">
+      <column name="precio_venta"/>
+    </property>
+    <property name="nombre" type="string">
+      <column length="145" name="nombre"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="garantias" table="garantia">
+      <key>
+        <column length="17" name="gar_vehiculo_vin" not-null="true"/>
+      </key>
+      <one-to-many class="utilHibernate.Garantia"/>
+    </set>
+  </class>
+</hibernate-mapping>

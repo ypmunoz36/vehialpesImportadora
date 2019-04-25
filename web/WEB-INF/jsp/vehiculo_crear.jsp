@@ -37,7 +37,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               <!--header start here-->
 				<div class="header-main">
 					<div class="logo-w3-agile">
-								<h1><a href="helloWorld.html">VehiAlpes</a></h1>
+								<h1><a href="helloWorld.htm">VehiAlpes</a></h1>
 							</div>
 					<div class="w3layouts-left">
 							
@@ -225,62 +225,113 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  		
 <!----->
 <div class="grid-form1">
-        
-<h3 id="forms-horizontal">Consultar</h3>
-<form action="#" method="post" class="form-horizontal">
-<div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label hor-form">Identificador de venta</label>
-    <div class="col-sm-10">
-       <input type="text" class="form-control"  name="identificacionB" placeholder="Identificador de venta" required>
-    </div>
-  </div>
-      <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-     <input class="btn btn-default" type="submit" value="BUSCAR">
-    </div>
-  </div>
-</form>
-<h3 id="forms-horizontal">Edición de venta</h3>
-
-<form action="ventaRegistrar.htm" method="post" class="form-horizontal">
+<h3 id="forms-horizontal">Registro de vehiculos</h3>
+<p>${mensaje}</p>
+<form action="vehiculoRegistrar.htm" method="post" class="form-horizontal">
 
   <div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label hor-form">Identificación del cliente</label>
+    <label for="inputEmail3" class="col-sm-2 control-label hor-form">VIN </label>
     <div class="col-sm-10">
-       <input type="text" class="form-control"  name="identificacion" placeholder="Identificación" required>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label hor-form">VIN del vehiculo</label>
-    <div class="col-sm-10">
-     <input type="text" class="form-control"  name="vin" placeholder="Identificador del vehiculo" required>
+       <input type="text" class="form-control"  name="vin" placeholder="VIN" required>
     </div>
   </div>
      <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Fecha</label>
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Nombre</label>
     <div class="col-sm-10">
-     <input type="date" class="form-control"  name="fecha" placeholder="Fecha" required>
+    <input type="text" class="form-control"  name="nombre" placeholder="Nombre" required>
+    </div>
+  </div> 
+    
+  <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label hor-form">Costo</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control"  name="precioCosto" placeholder="Costo" required>
+    </div>
+  </div>  
+    
+     <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Precio venta</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control"  name="precioVenta" placeholder="Precio venta" required>
+    </div>
+  </div> 
+
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Matricula</label>
+    <div class="col-sm-10">
+     <input type="text" class="form-control"  name="matricula" placeholder="Matricula" required>
     </div>
   </div>
      <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Precio</label>
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Año de fabricación</label>
     <div class="col-sm-10">
-     <input type="text" class="form-control"  name="precio" placeholder="precio" required>
+     <input type="text" class="form-control"  name="anioFabricacion" placeholder="anioFabricacion" required>
+    </div>
+  </div>
+     <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Cilindraje</label>
+    <div class="col-sm-10">
+     <input type="text" class="form-control"  name="cilindraje" placeholder="Cilindraje" required>
     </div>
   </div>
     
      <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Asesor</label>
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Tipo de Combustible</label>
     <div class="col-sm-10">
-    <input type="text" class="form-control"  name="asesor" placeholder="asesor" required>
+    <input type="text" class="form-control"  name="tipoCombustible" placeholder="Tipo de Combustible" required>
     </div>
   </div>
  
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Modelo</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control"  name="modelo" placeholder="modelo" required>
+    </div>
+  </div>
+    
+    <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Color</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control"  name="color" placeholder="Color" required>
+    </div>
+  </div>
+    
+    <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Numero de sillas</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control"  name="numSillas" placeholder="0"  required>
+    </div>
+  </div>
+    
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Marca</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control"  name="idMarca" placeholder="marca" required>
+    </div>
+  </div>
+    
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Tipo</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control"  name="idTipo" placeholder="Tipo" required>
+    </div>
+  </div>
+    
+      <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Pais de fabricación</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control"  name="paisFab" placeholder="Pais" required>
+    </div>
+ 
+    
+    
+    
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
      <input class="btn btn-default" type="submit" value="REGISTRAR">
     </div>
   </div>
+    
 </form> 
 
                                            

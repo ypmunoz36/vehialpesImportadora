@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/03/2019 12:45:31 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="vehialpes" name="utilHibernate.Usuario" optimistic-lock="version" table="usuario">
+    <id name="idusuario" type="java.lang.Integer">
+      <column name="idusuario"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="utilHibernate.Cargo" fetch="select" name="cargo">
+      <column name="usu_cargo_idcargo" not-null="true"/>
+    </many-to-one>
+    <property name="usuNombre" type="string">
+      <column length="45" name="usu_nombre"/>
+    </property>
+    <property name="usuApellido" type="string">
+      <column length="45" name="usu_apellido"/>
+    </property>
+    <property name="usuNombreUsuario" type="string">
+      <column length="45" name="usu_nombre_usuario"/>
+    </property>
+    <property name="usuContrasenia" type="string">
+      <column length="45" name="usu_contrasenia"/>
+    </property>
+    <property name="usuEstado" type="java.lang.Integer">
+      <column name="usu_estado"/>
+    </property>
+    <property name="usuFechaRegistro" type="timestamp">
+      <column length="19" name="usu_fecha_registro"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="pqrses" table="pqrs">
+      <key>
+        <column name="usuario_idusuario" not-null="true"/>
+      </key>
+      <one-to-many class="utilHibernate.Pqrs"/>
+    </set>
+  </class>
+</hibernate-mapping>

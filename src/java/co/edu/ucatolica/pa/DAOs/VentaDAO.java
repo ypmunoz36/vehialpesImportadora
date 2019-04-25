@@ -3,18 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniminuto.pa.DAOs;
+package co.edu.ucatolica.pa.DAOs;
 
-import co.edu.uniminuto.pa.DTOs.Persona;
-import co.edu.uniminuto.pa.DTOs.VentaDTO;
+import co.edu.ucatolica.pa.DTOs.Persona;
+import co.edu.ucatolica.pa.DTOs.VentaDTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.hibernate.Hibernate;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import utilHibernate.HibernateUtil;
+import utilHibernate.Venta;
 
 /**
  *
@@ -35,8 +42,8 @@ public class VentaDAO {
             pstmt = con.prepareStatement("INSERT INTO venta(cliente_cli_identificacion,vehiculo_idcarro,ven_fecha,ven_precio,usuario_asesor) "
                     + "VALUES(?,?,?,?,?)");
             
-            pstmt.setInt(1,p.getIdentificacionCliente());
-            pstmt.setString(2, p.getVinAuto());
+            pstmt.setInt(1,p.getCliIdentificacion());
+            pstmt.setString(2, p.getVehiculoIdcarro());
             pstmt.setString(3, p.getFechaVenta());
             pstmt.setInt(4, p.getPrecioVenta());
             pstmt.setString(5, p.getAsesor());
@@ -56,11 +63,26 @@ public class VentaDAO {
 
     public ArrayList<VentaDTO> consultarVenta(VentaDTO p, Connection con)
     {
-        
-        ArrayList<VentaDTO> datos = new ArrayList();
+        /* hibernate
+        ArrayList<Venta> datos = new ArrayList();
         
         Logger.getLogger(VentaDAO.class.getName()).log(Level.INFO, "Ejecutando consultar...");
         
+        SessionFactory sf = HibernateUtil.buildSessionFactory();
+        Session session = sf.openSession();
+        Query q = session.createQuery("select v FROM Venta v");
+        Iterator<Venta> it = q.iterate();
+        
+        Venta v;
+        while(it.hasNext()){
+            v=it.next();
+            System.out.println("---->>>>>"+v.getIdventa()+ " cte " + v.getCliente().getCliIdentificacion());
+
+            datos.add(v);
+        }
+        session.close(); */
+        
+         ArrayList<VentaDTO> datos = new ArrayList();
         try {
             Statement s = con.createStatement();
             ResultSet rs = s.executeQuery ("select idventa,  cliente_cli_identificacion,"
@@ -71,8 +93,8 @@ public class VentaDAO {
             { 
                 VentaDTO ven = new VentaDTO();
                 ven.setIdventa(rs.getInt(1));
-                ven.setIdentificacionCliente(rs.getInt(2));
-                ven.setVinAuto(rs.getString(3));
+                ven.setCliIdentificacion(rs.getInt(2));
+                ven.setVehiculoIdcarro(rs.getString(3));
                 ven.setFechaVenta(rs.getString(4));
                 ven.setPrecioVenta(rs.getInt(5));
                 ven.setAsesor(rs.getString(6));

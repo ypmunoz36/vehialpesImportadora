@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniminuto.pa.DTOs;
+package co.edu.ucatolica.pa.DTOs;
 
 /**
  *
@@ -11,7 +11,7 @@ package co.edu.uniminuto.pa.DTOs;
  */
 public class ClienteDTO {
      
-    private int identificacion =0;
+    private String identificacion =null;
     private String nombre  = null;
     private String apellidos = null ;
     private String direccion = null;
@@ -27,11 +27,11 @@ public class ClienteDTO {
     public ClienteDTO() {
     }
 
-    public int getIdentificacion() {
+    public String getIdentificacion() {
         return identificacion;
     }
 
-    public void setIdentificacion(int identificacion) {
+    public void setIdentificacion(String identificacion) {
         this.identificacion = identificacion;
     }
 

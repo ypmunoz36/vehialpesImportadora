@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/03/2019 12:45:31 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="vehialpes" name="utilHibernate.Ciudad" optimistic-lock="version" table="ciudad">
+    <id name="idciudad" type="java.lang.Integer">
+      <column name="idciudad"/>
+      <generator class="identity"/>
+    </id>
+    <property name="ciuNombre" type="string">
+      <column length="45" name="ciu_nombre"/>
+    </property>
+    <property name="ciuFechaRegistro" type="timestamp">
+      <column length="19" name="ciu_fecha_registro"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="concesionarios" table="concesionario">
+      <key>
+        <column name="con_id_ciudad" not-null="true"/>
+      </key>
+      <one-to-many class="utilHibernate.Concesionario"/>
+    </set>
+  </class>
+</hibernate-mapping>

@@ -1,11 +1,12 @@
-<!--
-Author: W3layouts
+<!DOCTYPE html>
+<!--A Design by W3layouts
+Author: W3layout
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <title>VehiAlpes</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -226,12 +227,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!----->
 <div class="grid-form1">
         
-<h3 id="forms-horizontal">Consultar</h3>
-<form action="#" method="post" class="form-horizontal">
+<h3 id="forms-horizontal">Consultar cliente</h3>
+<form action="clienteConsultarForm.htm" method="post" class="form-horizontal">
 <div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label hor-form">Identificador de venta</label>
+    <label for="inputEmail3" class="col-sm-2 control-label hor-form">Cliente</label>
     <div class="col-sm-10">
-       <input type="text" class="form-control"  name="identificacionB" placeholder="Identificador de venta" required>
+       <input type="text" class="form-control"  name="identificacion" placeholder="Identificación" required>
     </div>
   </div>
       <div class="form-group">
@@ -240,45 +241,81 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
   </div>
 </form>
-<h3 id="forms-horizontal">Edición de venta</h3>
+<p>${mensaje}</p>
+<h3 id="forms-horizontal">Edición de cliente</h3>
 
-<form action="ventaRegistrar.htm" method="post" class="form-horizontal">
+<form action="clienteEditarForm.htm" method="post" class="form-horizontal">
 
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label hor-form">Identificación del cliente</label>
     <div class="col-sm-10">
-       <input type="text" class="form-control"  name="identificacion" placeholder="Identificación" required>
+       <input type="text" class="form-control"  name="identificacion" value="${clienteConsultado.getIdentificacion()}" required>
     </div>
   </div>
   <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label hor-form">VIN del vehiculo</label>
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Nombre del cliente</label>
     <div class="col-sm-10">
-     <input type="text" class="form-control"  name="vin" placeholder="Identificador del vehiculo" required>
+     <input type="text" class="form-control"  name="nombre" value="${clienteConsultado.getNombre()}" required>
     </div>
   </div>
      <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Fecha</label>
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Apellido</label>
     <div class="col-sm-10">
-     <input type="date" class="form-control"  name="fecha" placeholder="Fecha" required>
+     <input type="text" class="form-control"  name="apellidos" value="${clienteConsultado.getApellidos()}" required>
     </div>
   </div>
      <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Precio</label>
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Dirección</label>
     <div class="col-sm-10">
-     <input type="text" class="form-control"  name="precio" placeholder="precio" required>
+     <input type="text" class="form-control"  name="direccion" value="${clienteConsultado.getDireccion()}" required>
     </div>
   </div>
     
      <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Asesor</label>
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Ciudad</label>
     <div class="col-sm-10">
-    <input type="text" class="form-control"  name="asesor" placeholder="asesor" required>
+    <input type="text" class="form-control"  name="ciudad" value="${clienteConsultado.getCiudad()}" required>
     </div>
   </div>
  
   <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Teléfono</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control"  name="telefono" value="${clienteConsultado.getTelefono()}" required>
+    </div>
+  </div>
+    
+    <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Celular</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control"  name="celular" value="${clienteConsultado.getCelular()}" required>
+    </div>
+  </div>
+    
+    <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Fecha de nacimiento</label>
+    <div class="col-sm-10">
+    <input type="date" class="form-control"  name="fechaNacimiento" value="${clienteConsultado.getFechaNacimiento()}" required>
+    </div>
+  </div>
+    
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Correo</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control"  name="correo" value="${clienteConsultado.getCorreo()}" required>
+    </div>
+  </div>
+    
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Descripción</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control"  name="descripcion" value="${clienteConsultado.getDescripcion()}" required>
+    </div>
+  </div>  
+ 
+  <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-     <input class="btn btn-default" type="submit" value="REGISTRAR">
+     <input class="btn btn-default" type="submit" value="ACTUALIZAR">
     </div>
   </div>
 </form> 

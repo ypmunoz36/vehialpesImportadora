@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniminuto.pa.bds;
+package co.edu.ucatolica.pa.bds;
 
 import java.sql.*;
 import javax.sql.*;

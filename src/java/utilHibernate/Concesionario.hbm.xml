@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/03/2019 12:45:31 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="vehialpes" name="utilHibernate.Concesionario" optimistic-lock="version" table="concesionario">
+    <id name="idconcesionario" type="java.lang.Integer">
+      <column name="idconcesionario"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="utilHibernate.Ciudad" fetch="select" name="ciudad">
+      <column name="con_id_ciudad" not-null="true"/>
+    </many-to-one>
+    <property name="conNombre" type="string">
+      <column length="145" name="con_nombre"/>
+    </property>
+    <property name="conDireccion" type="string">
+      <column length="45" name="con_direccion"/>
+    </property>
+    <property name="conTelefonoFijo" type="string">
+      <column length="45" name="con_telefono_fijo"/>
+    </property>
+    <property name="conCelular" type="string">
+      <column length="45" name="con_celular"/>
+    </property>
+    <property name="conFechaRegistro" type="timestamp">
+      <column length="19" name="con_fecha_registro"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="tallers" table="taller">
+      <key>
+        <column name="tal_id_concesionario" not-null="true"/>
+      </key>
+      <one-to-many class="utilHibernate.Taller"/>
+    </set>
+  </class>
+</hibernate-mapping>

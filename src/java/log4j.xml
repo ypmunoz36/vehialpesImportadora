@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "dtds/log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"
+	debug="false">
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%n%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%l] %n%m%n" />
+		</layout>
+	</appender>
+ <!-- Todos -->
+	<appender name="error_file"
+		class="org.apache.log4j.RollingFileAppender">
+            	<param name="File" value="C:/LogVA/logError.log" />
+                <param name="Append" value="true" />
+		<param name="MaxFileSize" value="2000000" />
+		<param name="MaxBackupIndex" value="5" />
+ 
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%n%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%l] %n%m%n" />
+		</layout>
+	</appender> 
+ <!-- debug -->
+	<appender name="debug_file"
+		class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="C:/LogVA/logDebug.log" />
+		<param name="MaxFileSize" value="5000000" />
+		<param name="MaxBackupIndex" value="5" /> 
+ 
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%n%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%l] %n%m%n" />
+		</layout>
+	</appender>
+ <!-- warning --> 
+	<appender name="warn_file"
+		class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="C:/LogVA/logWarn.log" />
+		<param name="MaxFileSize" value="2000000" />
+		<param name="MaxBackupIndex" value="5" />
+		        <param name="Threshold" value="WARN" />
+
+ 
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%n%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%l] %n%m%n" />
+		</layout>
+
+	</appender>
+<!-- informacion -->	
+	<appender name="info_file"
+		class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="C:/LogVA/logInfo.log" />
+		<param name="MaxFileSize" value="2000000" />
+		<param name="MaxBackupIndex" value="5" />
+ 
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%n%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%l] %n%m%n" />
+		</layout>
+	</appender>
+   
+        <logger name="WARN" additivity="false">
+                <level value="WARN" />
+                <appender-ref ref="warn_file" />
+        </logger>
+
+        <logger name="ERROR" additivity="false">
+                <level value="ERROR" />
+                <appender-ref ref="error_file" />
+        </logger>
+        <root>
+                  <level value="debug" />
+                  <appender-ref ref="console" />
+                  <appender-ref ref="debug_file" />
+              </root>
+        
+       <!-- 
+        <category name ="info" >
+            <priority value="info" /> 
+            <appender-ref ref="info_file" />
+        </category>
+        
+         <root>
+            <level value="warn" />
+            <appender-ref ref="warn_file" />
+        </root>
+        <root>
+            <level value="error" />
+            <appender-ref ref="error_file" />
+        </root>
+        -->
+</log4j:configuration>

@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniminuto.pa.DAOs;
+package co.edu.ucatolica.pa.DAOs;
 
-import co.edu.uniminuto.pa.DTOs.Persona;
+import co.edu.ucatolica.pa.DTOs.Persona;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  *
  * @author nixoduaa
  */
-public class ClienteDAO {
+public class PersonaDAO {
     
     
     
@@ -29,7 +29,7 @@ public class ClienteDAO {
         boolean respuesta = false;
         try {            
             
-            Logger.getLogger(ClienteDAO.class.getName()).log(Level.INFO, "Ejecutando crearPersona...");
+            Logger.getLogger(PersonaDAO.class.getName()).log(Level.INFO, "Ejecutando crearPersona...");
             
             pstmt = con.prepareStatement("INSERT INTO persona "
                     + " VALUES (?,?,?,?,?,?,?,?,?,?,?)");
@@ -52,7 +52,7 @@ public class ClienteDAO {
             
             respuesta = true;
         } catch (SQLException ex) {
-            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PersonaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         return respuesta;
@@ -64,7 +64,7 @@ public class ClienteDAO {
         
         ArrayList<Persona> datos = new ArrayList();
         
-        Logger.getLogger(ClienteDAO.class.getName()).log(Level.INFO, "Ejecutando consultarPersona...");
+        Logger.getLogger(PersonaDAO.class.getName()).log(Level.INFO, "Ejecutando consultarPersona...");
         
         try {
             Statement s = con.createStatement();
@@ -95,11 +95,11 @@ public class ClienteDAO {
                 
             }
             
-            Logger.getLogger(ClienteDAO.class.getName()).log(Level.INFO, "Ejecutando consultarPersona fin..." + datos.size());
+            Logger.getLogger(PersonaDAO.class.getName()).log(Level.INFO, "Ejecutando consultarPersona fin..." + datos.size());
             
             con.close();
         } catch (SQLException ex) {
-            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PersonaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         return datos;
@@ -120,7 +120,7 @@ public class ClienteDAO {
 
             con.close();
         } catch (SQLException ex) {
-            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PersonaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         return id;
@@ -132,7 +132,7 @@ public class ClienteDAO {
         boolean respuesta = false;
         try {            
             
-            Logger.getLogger(ClienteDAO.class.getName()).log(Level.INFO, "Ejecutando editarPersona...");
+            Logger.getLogger(PersonaDAO.class.getName()).log(Level.INFO, "Ejecutando editarPersona...");
             
             pstmt = con.prepareStatement("UPDATE persona "
                     + " SET "
@@ -152,7 +152,7 @@ public class ClienteDAO {
             
             respuesta = true;
         } catch (SQLException ex) {
-            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PersonaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         return respuesta;

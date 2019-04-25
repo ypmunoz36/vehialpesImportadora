@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniminuto.pa.DTOs;
+package co.edu.ucatolica.pa.DTOs;
 
 /**
  *
@@ -11,8 +11,8 @@ package co.edu.uniminuto.pa.DTOs;
  */
 public class VentaDTO {
       private int idventa =0 ;
-    private int identificacionCliente = 0 ;
-    private String vinAuto = null;
+    private int cliIdentificacion = 0 ;
+    private String vehiculoIdcarro = null;
     private String fechaVenta = null;
     private int precioVenta = 0;
     private String asesor = null;
@@ -29,20 +29,20 @@ public class VentaDTO {
     }
     
 
-    public int getIdentificacionCliente() {
-        return identificacionCliente;
+    public int getCliIdentificacion() {
+        return cliIdentificacion;
     }
 
-    public void setIdentificacionCliente(int identificacionCliente) {
-        this.identificacionCliente = identificacionCliente;
+    public void setCliIdentificacion(int identificacionCliente) {
+        this.cliIdentificacion = identificacionCliente;
     }
 
-    public String getVinAuto() {
-        return vinAuto;
+    public String getVehiculoIdcarro() {
+        return vehiculoIdcarro;
     }
 
-    public void setVinAuto(String vinAuto) {
-        this.vinAuto = vinAuto;
+    public void setVehiculoIdcarro(String vinAuto) {
+        this.vehiculoIdcarro = vinAuto;
     }
 
     public String getFechaVenta() {
@@ -71,7 +71,7 @@ public class VentaDTO {
 
     @Override
     public String toString() {
-        return "VentaDTO{" + "identificacionCliente=" + identificacionCliente + ", vinAuto=" + vinAuto + ", fechaVenta=" + fechaVenta + ", precioVenta=" + precioVenta + ", asesor=" + asesor + '}';
+        return "VentaDTO{" + "identificacionCliente=" + cliIdentificacion + ", vinAuto=" + vehiculoIdcarro + ", fechaVenta=" + fechaVenta + ", precioVenta=" + precioVenta + ", asesor=" + asesor + '}';
     }
 
     

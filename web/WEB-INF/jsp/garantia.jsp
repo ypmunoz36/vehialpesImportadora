@@ -1,11 +1,15 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE HTML>
-<html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+	<!DOCTYPE html>
+	<!--A Design by W3layouts
+	Author: W3layout
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+	-->
+	<!DOCTYPE html>
+<html lang="en">
+	
 <head>
 <title>VehiAlpes</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,6 +32,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- lined-icons -->
 <link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
 <!-- //lined-icons -->
+
+
 </head> 
 <body>
    <div class="page-container">
@@ -37,7 +43,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               <!--header start here-->
 				<div class="header-main">
 					<div class="logo-w3-agile">
-								<h1><a href="helloWorld.html">VehiAlpes</a></h1>
+								<h1><a href="index.html">VehiAlpes</a></h1>
 							</div>
 					<div class="w3layouts-left">
 							
@@ -214,24 +220,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</ul>
 							</div>
 							
-				     <div class="clearfix"> </div>	
-				</div>
-<!--heder end here-->
+	<div class="clearfix"> </div>	
+	</div>
+<!--heder end here
 	<ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Home</a><i class="fa fa-angle-right"></i>Forms <i class="fa fa-angle-right"></i> Input</li>
-            </ol>
+            </ol>-->
 		<!--grid-->
- 	<div class="grid-form">
+ <div class="grid-form">
  		
 <!----->
 <div class="grid-form1">
-        
-<h3 id="forms-horizontal">Consultar</h3>
-<form action="#" method="post" class="form-horizontal">
+<h3 id="forms-horizontal">Garantías</h3>
+
+
+<form action="garantiaCons.htm" method="post" class="form-horizontal">
 <div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label hor-form">Identificador de venta</label>
+    <label for="inputEmail3" class="col-sm-2 control-label hor-form">Cliente o vehículo </label>
     <div class="col-sm-10">
-       <input type="text" class="form-control"  name="identificacionB" placeholder="Identificador de venta" required>
+       <input type="text" class="form-control"  name="idCliVeh" placeholder="" required>
     </div>
   </div>
       <div class="form-group">
@@ -240,53 +247,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
   </div>
 </form>
-<h3 id="forms-horizontal">Edición de venta</h3>
 
-<form action="ventaRegistrar.htm" method="post" class="form-horizontal">
 
-  <div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label hor-form">Identificación del cliente</label>
-    <div class="col-sm-10">
-       <input type="text" class="form-control"  name="identificacion" placeholder="Identificación" required>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label hor-form">VIN del vehiculo</label>
-    <div class="col-sm-10">
-     <input type="text" class="form-control"  name="vin" placeholder="Identificador del vehiculo" required>
-    </div>
-  </div>
-     <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Fecha</label>
-    <div class="col-sm-10">
-     <input type="date" class="form-control"  name="fecha" placeholder="Fecha" required>
-    </div>
-  </div>
-     <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Precio</label>
-    <div class="col-sm-10">
-     <input type="text" class="form-control"  name="precio" placeholder="precio" required>
-    </div>
-  </div>
-    
-     <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label hor-form">Asesor</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control"  name="asesor" placeholder="asesor" required>
-    </div>
-  </div>
- 
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-     <input class="btn btn-default" type="submit" value="REGISTRAR">
-    </div>
-  </div>
-</form> 
+ <table id="tablaResultado" class="table table-striped table-hover table-bordered" >
+                                <thead>       
+                                    <tr>
+                                       <th>Identificación</th>
+                                       <th>Cliente</th>
+                                       <th>VIN vehículo</th>
+                                       <th>Vehículo</th>
+                                       <th>Fecha de compra</th>
+                                       <th>Fecha fin de garantía</th>
+                                       <th>Estado</th>
+                                    </tr>
+                                </thead>                                        
+                                <tbody>
+                                 
+                                      
+                               
+                                    
+                            <c:forEach var="g" items="${garantiaConsultada}">                                           
+                               <tr>
+                                  
+                                   <td>${g.getIdCliente()}</td>
+                                   <td>${g.getNomCliente()}</td>
+                                   <td>${g.getVinVehiculo()}</td>
+                                   <td>${g.getValVehiculo()}</td>
+                                   <td>${g.getFechaVenta()}</td>
+                                   <td>${g.getFechaGarantia()}</td>
+                                   <td>${g.getEstado()}</td>
+                               </tr>
+                           </c:forEach>
+                                    
+                                </tbody>
+                            </table>
 
-                                           
-                                           
-                                            
-                                            
+
 					
 </div>
 <!---->
@@ -327,7 +323,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
   <!--//content-inner-->
 		<!--/sidebar-menu-->
-				<div class="sidebar-menu">
+			<div class="sidebar-menu">
 					<header class="logo1">
 						<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> 
 					</header>

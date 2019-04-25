@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/03/2019 12:45:31 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="vehialpes" name="utilHibernate.TipoVehiculo" optimistic-lock="version" table="tipo_vehiculo">
+    <id name="idtipoAutomovil" type="java.lang.Integer">
+      <column name="idtipo_automovil"/>
+      <generator class="identity"/>
+    </id>
+    <property name="tipo" type="string">
+      <column length="45" name="tipo"/>
+    </property>
+    <property name="fechaRegistro" type="timestamp">
+      <column length="19" name="fecha_registro"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="vehiculos" table="vehiculo">
+      <key>
+        <column name="id_tipo" not-null="true">
+          <comment>automóvil (4x2) y SUVs (4x4)</comment>
+        </column>
+      </key>
+      <one-to-many class="utilHibernate.Vehiculo"/>
+    </set>
+  </class>
+</hibernate-mapping>

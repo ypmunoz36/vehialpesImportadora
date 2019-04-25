@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/03/2019 12:45:31 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="vehialpes" name="utilHibernate.Garantia" optimistic-lock="version" table="garantia">
+    <id name="idgarantia" type="java.lang.Integer">
+      <column name="idgarantia"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="utilHibernate.Cliente" fetch="select" name="cliente">
+      <column name="gar_cliente_cli_identificacion" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="utilHibernate.Vehiculo" fetch="select" name="vehiculo">
+      <column length="17" name="gar_vehiculo_vin" not-null="true"/>
+    </many-to-one>
+    <property name="garFechaRegistro" type="timestamp">
+      <column length="19" name="gar_fecha_registro"/>
+    </property>
+    <property name="garLlamadaVerificacion" type="java.lang.Integer">
+      <column name="gar_llamada_verificacion">
+        <comment>0. Mto realizado 1. Mto no realizado</comment>
+      </column>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="detalleGarantias" table="detalle_garantia">
+      <key>
+        <column name="det_idgarantia" not-null="true"/>
+      </key>
+      <one-to-many class="utilHibernate.DetalleGarantia"/>
+    </set>
+  </class>
+</hibernate-mapping>

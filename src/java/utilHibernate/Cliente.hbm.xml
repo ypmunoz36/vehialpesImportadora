@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/03/2019 12:45:31 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="vehialpes" name="utilHibernate.Cliente" optimistic-lock="version" table="cliente">
+    <id name="cliIdentificacion" type="int">
+      <column name="cli_identificacion"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="cliNombres" type="string">
+      <column length="145" name="cli_nombres"/>
+    </property>
+    <property name="cliApellidos" type="string">
+      <column length="145" name="cli_apellidos"/>
+    </property>
+    <property name="cliDireccion" type="string">
+      <column length="45" name="cli_direccion"/>
+    </property>
+    <property name="cliCiudad" type="string">
+      <column length="45" name="cli_ciudad"/>
+    </property>
+    <property name="cliTelefono" type="string">
+      <column length="45" name="cli_telefono"/>
+    </property>
+    <property name="cliCelular" type="string">
+      <column length="45" name="cli_celular"/>
+    </property>
+    <property name="cliTipo" type="java.lang.Integer">
+      <column name="cli_tipo">
+        <comment>1 cliente 2 prospecto</comment>
+      </column>
+    </property>
+    <property name="cliFechaNac" type="date">
+      <column length="10" name="cli_fecha_nac"/>
+    </property>
+    <property name="cliCorreo" type="string">
+      <column length="145" name="cli_correo"/>
+    </property>
+    <property name="cliDescripcion" type="string">
+      <column length="145" name="cli_descripcion"/>
+    </property>
+    <property name="cliFechaRegistro" type="timestamp">
+      <column length="19" name="cli_fecha_registro"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="pqrses" table="pqrs">
+      <key>
+        <column name="cliente_cli_identificacion" not-null="true"/>
+      </key>
+      <one-to-many class="utilHibernate.Pqrs"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="ventas" table="venta">
+      <key>
+        <column name="cliente_cli_identificacion" not-null="true"/>
+      </key>
+      <one-to-many class="utilHibernate.Venta"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="garantias" table="garantia">
+      <key>
+        <column name="gar_cliente_cli_identificacion" not-null="true"/>
+      </key>
+      <one-to-many class="utilHibernate.Garantia"/>
+    </set>
+  </class>
+</hibernate-mapping>

@@ -10,11 +10,11 @@ package controllers;
  * @author NixonD
  */
 
-import co.edu.uniminuto.pa.DAOs.PersonaDAO;
-import co.edu.uniminuto.pa.DAOs.VentaDAO;
-import co.edu.uniminuto.pa.DTOs.Persona;
-import co.edu.uniminuto.pa.DTOs.VentaDTO;
-import co.edu.uniminuto.pa.bds.MySqlDataSource;
+import co.edu.ucatolica.pa.DAOs.PersonaDAO;
+import co.edu.ucatolica.pa.DAOs.VentaDAO;
+import co.edu.ucatolica.pa.DTOs.Persona;
+import co.edu.ucatolica.pa.DTOs.VentaDTO;
+import co.edu.ucatolica.pa.bds.MySqlDataSource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -25,6 +25,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
+import utilHibernate.Venta;
  
 @Controller
 @RequestMapping("/")
@@ -62,8 +63,8 @@ public class VentaControllers {
         String asesor = req.getParameter("asesor");
         
         VentaDTO v = new VentaDTO();
-        v.setIdentificacionCliente( Integer.parseInt( identificacion));
-        v.setVinAuto(vin);
+        v.setCliIdentificacion( Integer.parseInt( identificacion));
+        v.setVehiculoIdcarro(vin);
         v.setFechaVenta(fecha);
         v.setPrecioVenta( Integer.parseInt( precio) );
         v.setAsesor(asesor);
@@ -80,15 +81,14 @@ public class VentaControllers {
         
         return "venta_crear";
     }     
-    
+    /*
 @RequestMapping(method = RequestMethod.GET, value = "ventaConsultar.htm")
     public String processSubmit2(HttpServletRequest req, SessionStatus status,ModelMap model) 
     {      
         Logger.getLogger(VentaControllers.class.getName()).log(Level.INFO, "Ejecutando processSubmit2...");
         return "venta_consultar";
-    } 
-    
-@RequestMapping(method = RequestMethod.GET, value = "ventaConsultarForm.htm")
+    } */
+  @RequestMapping(method = RequestMethod.GET, value = "ventaConsultarForm.htm")
     public String processSubmit3(HttpServletRequest req, SessionStatus status,ModelMap model) 
     {
 
@@ -96,20 +96,15 @@ public class VentaControllers {
             
         Logger.getLogger(PersonaDAO.class.getName()).log(Level.INFO, "Ejecutando processSubmit3...");
 
-      //  int id = vDao.obtenerId(MySqlDataSource.getConexionBD());
-       // String ident = req.getParameter("identificacion");
-      //  String nombre1 = req.getParameter("nombre1");
-        
         VentaDTO v = new VentaDTO();
         
         System.out.println("estoy consultando ");    
         List<VentaDTO> datos = vDao.consultarVenta(v, MySqlDataSource.getConexionBD());
-
         
       //  Logger.getLogger(VentaControllers.class.getName()).log(Level.SEVERE, null, "Consultar + " + ident + "-" + datos.size());
         
         model.put("listaVentas", datos);
-        System.out.println("--->>>>>"+datos.size());
+     
         if (datos.size() > 0)
             model.put("mensaje", "La consulta se realizo satisfactoriamente!!!" + datos.size() );
         else
@@ -153,6 +148,7 @@ public class VentaControllers {
         
     }    
     
+    /*
 @RequestMapping(method = RequestMethod.POST, value = "ventaEditarForm2.htm")
     public String processSubmit6(HttpServletRequest req, SessionStatus status,ModelMap model) 
     {
@@ -197,5 +193,5 @@ public class VentaControllers {
         
         return "venta_editar";
         
-    }    
+    }*/    
 }

@@ -222,10 +222,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							
 	<div class="clearfix"> </div>	
 	</div>
-<!--heder end here-->
+<!--heder end here
 	<ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Home</a><i class="fa fa-angle-right"></i>Forms <i class="fa fa-angle-right"></i> Input</li>
-            </ol>
+            </ol>-->
 		<!--grid-->
  <div class="grid-form">
  		
@@ -246,12 +246,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </tr>
                                 </thead>                                        
                                 <tbody>
-                                    
+                                 
+                                      
                                  <c:forEach var="ven" items="${listaVentas}">                                           
                                     <tr>
                                         <td>${ven.getIdventa()}</td>
-                                        <td>${ven.getIdentificacionCliente()}</td>
-                                        <td>${ven.getVinAuto()}</td>
+                                        <td>${ven.getCliIdentificacion()}</td>
+                                        <td>${ven.getVehiculoIdcarro()}</td>
                                          <td>${ven.getFechaVenta()}</td>
                                           <td>${ven.getPrecioVenta()}</td>
                                            <td>${ven.getAsesor()}</td>
@@ -259,7 +260,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </tr>
                                 </c:forEach>
                                 
-                                   
                                 </tbody>
                             </table>
 
@@ -309,48 +309,38 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> 
 					</header>
 						<div style="border-top:1px ridge rgba(255, 255, 255, 0.15)"></div>
-                           <div class="menu">
-									<ul id="menu" >
-										<li><a href="index.html"><i class="fa fa-tachometer"></i> <span>Dashboard</span><div class="clearfix"></div></a></li>
-										
-										 <li id="menu-academico" ><a href="ventaCrear.htm"><i class="fa fa-shopping-cart nav_icon"></i><span>Registrar Venta</span><div class="clearfix"></div></a></li>
-                                                                                <li id="menu-academico" ><a href="ventaConsultarForm.htm"><i class="fa fa-shopping-cart nav_icon"></i><span>Consultar venta</span><div class="clearfix"></div></a></li>
-										<li id="menu-academico" ><a href="ventaEditar.htm"><i class="fa fa-shopping-cart nav_icon"></i><span>Editar venta</span><div class="clearfix"></div></a></li>
+                                                                <div class="menu">
+                                                                    <ul id="menu" >
+                                                                            
+                                                                    <li><a href="index.html"><i class="fa fa-tachometer"></i> <span>Dashboard</span><div class="clearfix"></div></a></li>
 
-                                                                                 
-                                                                                 <li id="menu-academico" ><a href="charts.html"><i class="fa fa-bar-chart"></i><span>Charts</span><div class="clearfix"></div></a></li>
-									 <li id="menu-academico" ><a href="#"><i class="fa fa-list-ul" aria-hidden="true"></i><span> Short Codes</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
-										   <ul id="menu-academico-sub" >
-										   <li id="menu-academico-avaliacoes" ><a href="icons.html">Icons</a></li>
-											<li id="menu-academico-avaliacoes" ><a href="typography.html">Typography</a></li>
-											<li id="menu-academico-avaliacoes" ><a href="faq.html">Faq</a></li>
-										  </ul>
-										</li>
-									<li id="menu-academico" ><a href="errorpage.html"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span>Error Page</span><div class="clearfix"></div></a></li>
-									  <li id="menu-academico" ><a href="#"><i class="fa fa-cogs" aria-hidden="true"></i><span> UI Components</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
-										   <ul id="menu-academico-sub" >
-										   <li id="menu-academico-avaliacoes" ><a href="button.html">Buttons</a></li>
-											<li id="menu-academico-avaliacoes" ><a href="grid.html">Grids</a></li>
-										  </ul>
-										</li>
-									 <li><a href="tabels.html"><i class="fa fa-table"></i>  <span>Tables</span><div class="clearfix"></div></a></li>
-									<li><a href="maps.html"><i class="fa fa-map-marker" aria-hidden="true"></i>  <span>Maps</span><div class="clearfix"></div></a></li>
-							        <li id="menu-academico" ><a href="#"><i class="fa fa-file-text-o"></i>  <span>Pages</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
-										 <ul id="menu-academico-sub" >
-											<li id="menu-academico-boletim" ><a href="calendar.html">Calendar</a></li>
-											<li id="menu-academico-avaliacoes" ><a href="signin.html">Sign In</a></li>
-											<li id="menu-academico-avaliacoes" ><a href="signup.html">Sign Up</a></li>
-											
-
-										  </ul>
-									 </li>
-									<li><a href="#"><i class="fa fa-check-square-o nav_icon"></i><span>Forms</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
-									  <ul>
-										<li><a href="input.html"> Input</a></li>
-										<li><a href="validation.html">Validation</a></li>
-									</ul>
-									</li>
-								  </ul>
+                                                                    <li id="menu-academico" ><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span> Gestión de ventas </span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+                                                                       <ul id="menu-academico-sub" >
+                                                                       <li id="menu-academico-avaliacoes" ><a href="ventaCrear.htm">Registrar</a></li>
+                                                                            <li id="menu-academico-avaliacoes" ><a href="ventaConsultarForm.htm">Consultar</a></li>
+                                                                            <li id="menu-academico-avaliacoes" ><a href="ventaEditar.htm">Editar</a></li>
+                                                                      </ul>
+                                                                    </li>
+                                                                    
+                                                                    <li id="menu-academico" ><a href="#"><i class="fa fa-users" aria-hidden="true"></i><span> Gestión de clientes </span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+                                                                       <ul id="menu-academico-sub" >
+                                                                       <li id="menu-academico-avaliacoes" ><a href="clienteCrear.htm">Registrar</a></li>
+                                                                            <li id="menu-academico-avaliacoes" ><a href="clienteEditar.htm">Consultar</a></li>
+                                                                          <!--  <li id="menu-academico-avaliacoes" ><a href="clienteEditar.htm">Editar</a></li> -->
+                                                                      </ul>
+                                                                    </li>
+                                                                    
+                                                                    <li id="menu-academico" ><a href="#"><i class="fa fa-car" aria-hidden="true"></i><span> Gestión de vehículos </span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+                                                                       <ul id="menu-academico-sub" >
+                                                                       <li id="menu-academico-avaliacoes" ><a href="vehiculoCrear.htm">Registrar</a></li>
+                                                                            <li id="menu-academico-avaliacoes" ><a href="vehiculoEditar.htm">Consultar</a></li>
+                                                                      </ul>
+                                                                    </li>
+                                                                    
+                                                                    <li id="menu-academico" ><a href="vehiculoConsCatalogo.htm"><i class="fa fa-folder-open" aria-hidden="true"></i><span> Catálogo </span> <div class="clearfix"></div></a></li>
+                                                                    <li id="menu-academico" ><a href="garantia.htm"><i class="fa fa-folder-open" aria-hidden="true"></i><span> Garantías </span> <div class="clearfix"></div></a></li>
+                                                                    
+                                                                    </ul>
 								</div>
 							  </div>
 							  <div class="clearfix"></div>		
